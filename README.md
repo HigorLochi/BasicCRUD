@@ -1,98 +1,99 @@
-📌 Sistema MVC em PHP (PHP 8.4 + HTML5UP)
+#MVC System in PHP (PHP 8.4 + HTML5UP)
 
-Este projeto é uma aplicação web desenvolvida em PHP puro (versão 8.4.0) utilizando o padrão de arquitetura MVC (Model-View-Controller). A interface foi construída com base em um template da HTML5UP, garantindo um layout moderno e responsivo.
+This project is a web application developed in pure PHP (version 8.4.0) using the MVC (Model-View-Controller) architecture pattern. The interface was built based on an HTML5UP template, ensuring a modern and responsive layout.
 
-🚀 Tecnologias utilizadas
+#Technologies Used
 PHP 8.4.0
 HTML5 / CSS3 / JavaScript
-Template HTML5UP
+HTML5UP Template
 MySQL
-XAMPP (ambiente de desenvolvimento)
+XAMPP (development environment)
 
-⚙️ Pré-requisitos
+#Prerequisites
 
-Antes de rodar o projeto, você precisa ter instalado:
+Before running the project, you need to have the following installed:
 
 PHP 8.4.0
-XAMPP (ou outro servidor local)
-Navegador web
+XAMPP (or another local server)
+Web browser
 MySQL
 
-🛠️ Instalação do PHP 8.4.0
+#PHP 8.4.0 Installation
 
 Windows (manual):
-Acesse o site oficial:
+Access the official website:
+
 https://www.php.net/downloads
-Baixe o PHP 8.4 Thread Safe (zip)
+Download PHP 8.4 Thread Safe (zip)
 
-Extraia em uma pasta, exemplo:
-
-C:\php
-Adicione ao PATH do sistema:
-Pesquise "Variáveis de Ambiente"
-Edite o Path
-
-Adicione:
+Extract to a folder, for example:
 
 C:\php
+Add to the system PATH:
+Search for "Environment Variables"
+Edit the Path
 
-Teste no terminal:
+Add:
+
+C:\php
+
+Test in the terminal:
 
 php -v
 
-🧰 Instalação do XAMPP
+#XAMPP Installation
 
-Baixe o XAMPP:
+Download the XAMPP:
+
 https://www.apachefriends.org/index.html
-Instale normalmente
-Abra o XAMPP Control Panel
-Inicie:
+Install normally
+Open the XAMPP Control Panel
+Start:
 Apache
 MySQL
 
-📦 Configuração do Projeto
+#Project Configuration
 
-Clone ou baixe este repositório:
+Clone or download this repository:
 
-git clone https://github.com/seu-usuario/seu-projeto.git
+git clone https://github.com/your-username/your-project.git
 
-Coloque a pasta dentro do:
+Place the folder inside:
 
 C:\xampp\htdocs\
 
-Acesse no navegador:
+Access in your browser:
 
-http://localhost/seu-projeto/public
+http://localhost/your-project/public
 
-🎨 Template HTML5UP
+#HTML5UP Template
 
-O layout do sistema foi baseado em um template da HTML5UP, adaptado para funcionar com PHP no padrão MVC.
+The system layout was based on an HTML5UP template, adapted to work with PHP in the MVC pattern.
 
-Arquivos CSS e JS ficam em /public/assets
-Views reutilizam componentes como header, footer e layout base
+CSS and JS files are located in /public/assets. Views reuse components such as header, footer, and base layout.
 
-📌 Funcionalidades
+#Features
 
-CRUD básico
-Separação clara de camadas (MVC)
-Reutilização de layout
-Organização escalável
+Basic CRUD
+Clear separation of layers (MVC)
+Layout reuse
+Scalable organization
 
-🔒 Segurança (básico)
+#Security (basic)
 
-Uso de htmlspecialchars para evitar XSS
-Validação de dados no backend
+Use of htmlspecialchars to prevent XSS
+Data validation on the backend
 
-📈 Melhorias futuras
-Sistema de autenticação
-Middleware de rotas
-ORM ou Query Builder
-API REST
-Upload de arquivos
+#Future improvements
+Authentication system
+Route middleware
+ORM or Query Builder
+REST API
+File upload
 
-🤝 Contribuição
+#Contribution
 
-Sinta-se livre para contribuir:
+Feel free to contribute:
 
-Fork o projeto
-Crie uma branch
+Fork the project
+Create a branch

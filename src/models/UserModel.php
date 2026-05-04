@@ -5,7 +5,7 @@ namespace models;
 class UserModel{
     private int $id = 0; 
     private string $name = "";
-    private ?int $age = null;
+    private ?string $birthdate = null;
     private ?string $phone = null;
     private string $email = "";
     private ?string $postalcode = null;
@@ -21,8 +21,8 @@ class UserModel{
         return $this->name;
     }
 
-    public function getAge(){
-        return $this->age;
+    public function getBirthDate(){
+        return $this->birthdate;
     }
 
     public function getPhone(){
@@ -42,8 +42,8 @@ class UserModel{
         $this->name = $name;
     }
 
-    public function setAge(int $age){
-        $this->age = $age;
+    public function setBirthDate(string $birthdate){
+        $this->birthdate = $birthdate;
     }
 
     public function setPhone(string $phone){

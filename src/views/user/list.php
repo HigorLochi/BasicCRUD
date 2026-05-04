@@ -9,7 +9,7 @@
                 <thead>
                     <tr>
                         <th>Name</th>
-                        <th>Age</th>
+                        <th>Birth date</th>
                         <th>Phone Number</th>
                         <th>Email</th>
                         <th>Postal Code</th>
@@ -18,10 +18,10 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach($users as $user): ?>
+                    <?php foreach($rows as $user): ?>
                         <tr>
                             <td><?= protectedVariableText($user->getName()); ?></td>
-                            <td><?= protectedVariableText($user->getAge()); ?></td>
+                            <td><?= protectedVariableText($user->getBirthDate()); ?></td>
                             <td><?= protectedVariableText($user->getPhone()); ?></td>
                             <td><?= protectedVariableText($user->getEmail()); ?></td>
                             <td><?= protectedVariableText($user->getPostalCode()); ?></td>
@@ -39,6 +39,9 @@
                     <?php endforeach; ?>
                 </tbody>
             </table>
+
+            <?php require __DIR__ . '../../../views/pagination.php'; ?>
+
         </div>
     </div>
 </div>

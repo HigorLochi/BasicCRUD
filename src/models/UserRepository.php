@@ -4,11 +4,11 @@ namespace models;
 
 use PDO;
 
-class UserRepository{
+class UserRepository extends AbstractRepository{
     public function __construct(private PDO $pdo) {}
 
-    public function fetchAll(): array {
-        $query = $this->pdo->prepare("SELECT * FROM users ORDER BY name");
+    public function fetchAll(int $limit, int $page): array {
+        $query = $this->pdo->prepare("SELECT * FROM users ORDER BY name" . $this->buildPaginationQuery($limit, $page));
         $query->execute();
         $query->setFetchMode(PDO::FETCH_CLASS, UserModel::class);
 
@@ -24,12 +24,19 @@ class UserRepository{
         return $query->fetch();
     }
 
+    public function countRows(): int {
+        $query = $this->pdo->prepare("SELECT COUNT(id) AS count FROM users");
+        $query->execute();
+
+        return $query->fetch()['count'];
+    }
+
     public function insert(array $user): bool {
         try{
-            $query = $this->pdo->prepare("INSERT INTO users(name, age, phone, email, postalcode) VALUES(:name, :age, :phone, :email, :postalcode)");
+            $query = $this->pdo->prepare("INSERT INTO users(name, birthdate, phone, email, postalcode) VALUES(:name, :birthdate, :phone, :email, :postalcode)");
 
             $query->bindValue(':name', $user['name']);
-            $query->bindValue(':age', $user['age'], PDO::PARAM_INT);
+            $query->bindValue(':birthdate', $user['birthdate']);
             $query->bindValue(':phone', $user['phone']);
             $query->bindValue(':email', $user['email']);
             $query->bindValue(':postalcode', $user['postalcode']);
@@ -44,11 +51,11 @@ class UserRepository{
 
     public function update(array $user): bool {
         try{
-            $query = $this->pdo->prepare("UPDATE users SET name = :name, age = :age, phone = :phone, email = :email, postalcode = :postalcode WHERE id = :id");
+            $query = $this->pdo->prepare("UPDATE users SET name = :name, birthdate = :birthdate, phone = :phone, email = :email, postalcode = :postalcode WHERE id = :id");
 
             $query->bindValue(':id', $user['id']);
             $query->bindValue(':name', $user['name']);
-            $query->bindValue(':age', $user['age'], PDO::PARAM_INT);
+            $query->bindValue(':birthdate', $user['birthdate']);
             $query->bindValue(':phone', $user['phone']);
             $query->bindValue(':email', $user['email']);
             $query->bindValue(':postalcode', $user['postalcode']);

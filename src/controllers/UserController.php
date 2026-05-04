@@ -12,7 +12,17 @@ class UserController extends AbstractController{
     }
 
     public function list(){
-        $this->render('user/list', ['users' =>  $this->userRepository->fetchAll()]);
+        $limitPerPage = 10;
+        $page = (isset($_GET['page']) && (int) $_GET['page'] > 0) ? (int) $_GET['page'] : 1;
+        $count = $this->userRepository->countRows();
+
+        $this->render('user/list', [
+            'rows' =>  $this->userRepository->fetchAll($limitPerPage, $page),
+            'count' =>  $count,
+            'limitPerPage' => $limitPerPage,
+            'page' => $page,
+            'pagesCount' => ceil($count / $limitPerPage)
+        ]);
     }
 
     public function insert(){

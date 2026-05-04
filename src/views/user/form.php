@@ -12,8 +12,8 @@
                 <input required type="text" maxlength="100" name="name" id="name" value="<?= $user->getName() ?>" placeholder="Name" />
             </div>
             <div class="col-4 col-12-xsmall">
-                <label>Age:</label>
-                <input type="number" min="0" max="9999" name="age" id="age" value="<?= $user->getAge() ?>" placeholder="Age" />
+                <label>Birth date:</label>
+                <input type="date" name="birthdate" id="birthdate" value="<?= $user->getBirthDate() ?>" placeholder="Birth date" />
             </div>
             <div class="col-6 col-12-xsmall">
                 <label>Email:</label>

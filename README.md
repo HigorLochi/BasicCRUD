@@ -70,7 +70,7 @@ http://localhost/your-project/public
 
 The system layout was based on an HTML5UP template, adapted to work with PHP in the MVC pattern.
 
-CSS and JS files are located in /public/assets. Views reuse components such as header, footer, and base layout.
+CSS and JS files are located in /src/views/assets and /src/views/templates. Views reuse components such as siedebar and base layout.
 
 ## Features
 
@@ -88,7 +88,6 @@ Data validation on the backend
 Authentication system
 Route middleware
 ORM or Query Builder
-REST API
 File upload
 
 ## Contribution
